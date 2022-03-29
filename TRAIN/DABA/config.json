@@ -1,0 +1,65 @@
+{
+   "data": {
+                "sdate"            : "20191225",
+                "edate"            : "20191231",
+                "utc"              : ["00", "12"],
+                "var"              : ["T3H", "REH"],
+                "nx"               : 149,
+                "ny"               : 253,
+                "upscale_factor"   : 5,
+                "interpol_order"   : 3,
+                "in_path"          : "/data/home/rndkoa/2020/DNN_MSRN/TEST/DAOU",
+                "in_prefix"        : "DFS_SHRT_GRD_GDPS_DNNM",
+                "geo_dir"          : "../DABA/LCM_Kv22_KOR5KM_GeoMap_From_noaa_5km_landsea.npy",
+                "gis_dir"         : "../DABA/dfs_terrain_gis_5km.npy"
+   },
+   "train" : {
+                "lr"               : 0.001,
+                "epochs"           : 2,
+                "step"             : 2,
+                "decay"            : 0.9,
+                "batch_size"       : 1,
+                "patienct_num"     : 10
+   },
+   "model"      :{
+                "path"      : "/data/home/rndkoa/2020/DNN_MSRN/TRAIN/MSRN/DAOU",
+                "save_name" : "trn_shrt_grd_gdps_msrn_%s_%ss_%sutc.%s-%s.pth"
+                 },
+  "proj"       :{
+                "pi"               : 3.141592,
+                "r"                : 6371.00877,
+                "slat1"            : 30.0,
+                "slat2"            : 60.0,
+                "olat"             : 38.0,
+                "olon"             : 126.0,
+                "xo"               : 43,
+                "yo"               : 136,
+                "dd"               : 5.0,
+                "landsea"          : "../DABA/DFS_LandMask.dat",
+                "kel2cel"          : 273.15,
+                "nx"               : 149,
+                "ny"               : 253,
+                "N128" : {
+                        "lat_um"   : 29.953125,
+                        "lon_um"   : 115.945312,
+                        "dx"       : 0.140625,
+                        "dy"       : 0.093750,
+                        "lapse_rate": 0.0065
+                         },
+                "N768" : {
+                        "lat_um"   : 28.828125,
+                        "lon_um"   : 121.054688,
+                        "dx"       : 0.234375,
+                        "dy"       : 0.156250,
+                        "lapse_rate": 0.0000
+                         },
+                "N512" : {
+                        "lat_um"   : 28.828,
+                        "lon_um"   : 120.937,
+                        "dx"       : 0.3515625,
+                        "dy"       : 0.234375,
+                        "lapse_rate": 0.0000
+                         }
+                 }
+}
+

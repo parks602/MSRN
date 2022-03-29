@@ -1,0 +1,78 @@
+{
+   "option"  : "0",
+   "dnnm"    : {
+                "dnnm_model_path"      : {
+                         "path"        : "/data/home/rndkoa/2020/DNN_MSRN/TEST/DAIN/DNNM/",
+                         "model_name"  : "trn_shrt_grd_gdps_dnnm_%s_%ss_%sutc.%s-%s.pth",
+                         "sdate"       : "20170601",
+                         "edate"       : "20190531"
+                                          }
+               },
+   "msrn"    : {   
+                "msrn_model_path"       : {
+                         "path"        : "/data/home/rndkoa/2020/DNN_MSRN/TEST/DAIN/MSRN/",
+                         "model_name"  : "trn_shrt_grd_gdps_msrn_%s_%ss_%sutc.%s-%s.pth",
+                         "sdate"       : "20190601",
+                         "edate"       : "20200531"
+                                          }
+               },
+
+   "input"   : {
+                "dnn_input_dir"        : "/DFSDISK/ARCH/NWPD/GDPS_%s",
+                "sdate"                : "20191225",
+                "edate"                : "20191225",
+                "utcs"                 : ["00", "12"],
+                "vars"                 : ["T3H"],
+                "batchsize"            : 1,
+                "gis5_name"            : "/data/home/rndkoa/2020/DNN_MSRN/TEST/DABA/dfs_terrain_gis_5km.npy",
+                "grid5_name"           : "/data/home/rndkoa/2020/DNN_MSRN/TEST/DABA/grid_info5km.npy",
+                "gis1_name"            : "/data/home/rndkoa/2020/DNN_MSRN/TEST/DABA/elev_1KM_Mean_SRTM.npy",
+                "geo1_name"            : "/data/home/rndkoa/2020/DNN_MSRN/TEST/DABA/LCM_Kv22_KOR1KM_GeoMap.npy"
+
+                },
+
+   "output"   : {
+                "dnnm_opath"           : "/data/home/rndkoa/2020/DNN_MSRN/TEST/DAOU/",
+                "dnnm_prefix"          : "DFS_SHRT_GRD_GDPS_DNNM_5km",
+                "msrn_opath"           : "/data/home/rndkoa/2020/DNN_MSRN/TEST/DAOU/",
+                "msrn_prefix"          : "DFS_SHRT_GRD_GDPS_MSRN_1km"
+
+                },
+
+   "proj"     : {
+                "pi"               : 3.141592,
+                "r"                : 6371.00877,
+                "slat1"            : 30.0,
+                "slat2"            : 60.0,
+                "olat"             : 38.0,
+                "olon"             : 126.0,
+                "xo"               : 43,
+                "yo"               : 136,
+                "dd"               : 5.0,
+                "landsea"          : "../DABA/DFS_LandMask.dat",
+                "kel2cel"          : 273.15,
+                "nx"               : 149,
+                "ny"               : 253,
+                "N128" : {
+                        "lat_um"   : 29.953125,
+                        "lon_um"   : 115.945312,
+                        "dx"       : 0.140625,
+                        "dy"       : 0.093750,
+                        "lapse_rate": 0.0065
+                         },
+                "N768" : {
+                        "lat_um"   : 28.828125,
+                        "lon_um"   : 121.054688,
+                        "dx"       : 0.234375,
+                        "dy"       : 0.156250,
+                        "lapse_rate": 0.0000
+                         },
+                "N512" : {
+                        "lat_um"   : 28.828,
+                        "lon_um"   : 120.937,
+                        "dx"       : 0.3515625,
+                        "dy"       : 0.234375,
+                        "lapse_rate": 0.0000
+                         }
+                 }
+}
